@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Dto\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="RestSharp.Serializers.SystemTextJson" Version="106.15.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Hino.Service.AnyMarket.Application.Core\Hino.Service.AnyMarket.Application.Core.csproj" />
+    <ProjectReference Include="..\Hino.Service.AnyMarket.Core\Hino.Service.AnyMarket.Core.csproj" />
+    <ProjectReference Include="..\Hino.Service.AnyMarket.Domain.Products\Hino.Service.AnyMarket.Domain.Products.csproj" />
+  </ItemGroup>
+
+</Project>

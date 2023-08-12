@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Interfaces\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Hino.Service.AnyMarket.Application.Core\Hino.Service.AnyMarket.Application.Core.csproj" />
+    <ProjectReference Include="..\Hino.Service.AnyMarket.Domain.Orders\Hino.Service.AnyMarket.Domain.Orders.csproj" />
+  </ItemGroup>
+
+</Project>

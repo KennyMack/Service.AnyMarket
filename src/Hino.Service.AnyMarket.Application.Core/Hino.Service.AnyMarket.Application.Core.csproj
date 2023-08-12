@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Hino.Service.AnyMarket.Entities\Hino.Service.AnyMarket.Entities.csproj" />
+    <ProjectReference Include="..\Hino.Service.AnyMarket.Logs\Hino.Service.AnyMarket.Logs.csproj" />
+    <ProjectReference Include="..\Hino.Service.AnyMarket.Utils\Hino.Service.AnyMarket.Utils.csproj" />
+  </ItemGroup>
+
+</Project>

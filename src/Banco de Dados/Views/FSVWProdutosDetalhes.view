@@ -1,0 +1,49 @@
+CREATE OR REPLACE VIEW FSVWPRODUTOSDETALHES AS
+    SELECT A.CODPRODUTO, A.CODESTAB, C.IDAPI CODMARCA, C.DESCRICAO, 
+           D.IDCATEGNV1 FAMILIA, D.IDCATEGNV2 GRUPO, D.IDCATEGNV3 CLASSE, D.IDCATEGNV4 CATEGORIA,
+           E.LARGURA, E.COMPRIMENTO, E.ESPESSURA ALTURA, E.PESOBRUTO,
+           A.CODORIGMERC, NVL(F.SALDOESTOQUE, 0) SALDOESTOQUE
+      FROM FSPRODUTOPARAMESTAB A, 
+           FSMARCA  B,
+           MPMARCAS C,
+           MPCATEGORIAS D,
+           FSPRODUTOPCP E,
+           (SELECT A.CODESTAB, A.CODPRODUTO, SUM(A.SALDODISPONIVEL) SALDOESTOQUE
+              FROM FSVWSALDOESTOQUE A,
+                   (SELECT B.CODESTAB, B.CODESTOQUE, B.CODPRODUTO 
+                      FROM FSPRODUTOPARAMESTAB A,
+                           FSSALDOESTOQUE B
+                     WHERE A.CODESTAB = B.CODESTAB 
+                       AND A.CODESTOQUE = B.CODESTOQUE 
+                       AND A.CODPRODUTO = B.CODPRODUTO
+                     UNION
+                     SELECT B.CODESTAB, E.CODESTOQUE, B.CODPRODUTO 
+                       FROM FSPRODUTOPARAMESTAB A,
+                            FSSALDOESTOQUE B,
+                            FSLOCALESTOQUE C,
+                            FSLOCALESTOQUE D,
+                            FSSALDOESTOQUE E
+                      WHERE A.CODESTAB      = B.CODESTAB  
+                        AND A.CODPRODUTO    = B.CODPRODUTO
+                        AND A.CODESTOQUE    = B.CODESTOQUE
+                        AND C.CODESTOQUE    = B.CODESTOQUE
+                        AND D.CODGRUPOESTOQ = C.CODGRUPOESTOQ
+                        AND E.CODESTAB      = B.CODESTAB  
+                        AND E.CODPRODUTO    = B.CODPRODUTO
+                        AND E.CODESTOQUE    = D.CODESTOQUE
+                        AND D.CLASSIFICACAO IN ('A', 'E')) TBESTOQUES
+              WHERE A.CODESTAB   = TBESTOQUES.CODESTAB
+                AND A.CODPRODUTO = TBESTOQUES.CODPRODUTO
+                AND A.CODESTOQUE = TBESTOQUES.CODESTOQUE
+              GROUP BY A.CODESTAB, A.CODPRODUTO) F
+     WHERE E.CODPRODUTO        = A.CODPRODUTO
+       AND E.CODESTAB          = A.CODESTAB
+       AND F.CODPRODUTO     (+)= A.CODPRODUTO
+       AND F.CODESTAB       (+)= A.CODESTAB
+       AND B.CODMARCA       (+)= A.CODMARCA
+       AND C.CODMARCA       (+)= B.CODMARCA
+       AND D.CODFAMILIA     (+)= A.CODFAMILIA
+       AND EXISTS (SELECT 1
+                     FROM MPPRODUTOS MPROD
+                    WHERE MPROD.CODPRODUTO = A.CODPRODUTO
+                      AND MPROD.CODESTAB   = A.CODESTAB);

@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="7.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Hino.Service.AnyMarket.Application.Orders\Hino.Service.AnyMarket.Application.Orders.csproj" />
+    <ProjectReference Include="..\Hino.Service.AnyMarket.Application.Products\Hino.Service.AnyMarket.Application.Products.csproj" />
+    <ProjectReference Include="..\Hino.Service.AnyMarket.Application.Stock\Hino.Service.AnyMarket.Application.Stock.csproj" />
+    <ProjectReference Include="..\Hino.Service.AnyMarket.DataBase\Hino.Service.AnyMarket.DataBase.csproj" />
+    <ProjectReference Include="..\Hino.Service.AnyMarket.Domain.Stock\Hino.Service.AnyMarket.Domain.Stock.csproj" />
+  </ItemGroup>
+
+</Project>

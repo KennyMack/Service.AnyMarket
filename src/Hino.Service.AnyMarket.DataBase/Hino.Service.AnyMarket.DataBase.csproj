@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Proxies" Version="7.0.5" />
+    <PackageReference Include="Microsoft.Extensions.Configuration" Version="7.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="7.0.0" />
+    <PackageReference Include="Oracle.EntityFrameworkCore" Version="7.21.9" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Hino.Service.AnyMarket.Core\Hino.Service.AnyMarket.Core.csproj" />
+    <ProjectReference Include="..\Hino.Service.AnyMarket.Domain.Orders\Hino.Service.AnyMarket.Domain.Orders.csproj" />
+    <ProjectReference Include="..\Hino.Service.AnyMarket.Domain.Products\Hino.Service.AnyMarket.Domain.Products.csproj" />
+    <ProjectReference Include="..\Hino.Service.AnyMarket.Domain.Stock\Hino.Service.AnyMarket.Domain.Stock.csproj" />
+    <ProjectReference Include="..\Hino.Service.AnyMarket.Entities\Hino.Service.AnyMarket.Entities.csproj" />
+    <ProjectReference Include="..\Hino.Service.AnyMarket.Utils\Hino.Service.AnyMarket.Utils.csproj" />
+  </ItemGroup>
+
+</Project>
