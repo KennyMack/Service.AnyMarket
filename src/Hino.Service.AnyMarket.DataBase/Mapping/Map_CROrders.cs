@@ -60,7 +60,6 @@ namespace Hino.Service.AnyMarket.DataBase.Mapping
             builder.Property(c => c.PERCDISCOUNT);
             builder.Property(c => c.PERCCOMMISSION);
             builder.Property(c => c.QUEUEID);
-            builder.Property(c => c.GEQUEUEITEM);
             builder.Property(c => c.INPERSON);
             builder.Property(c => c.PAYMENTDUEDATE);
             builder.Property(c => c.STATUSPAY);

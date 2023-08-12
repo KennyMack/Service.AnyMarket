@@ -20,7 +20,6 @@ namespace Hino.Service.AnyMarket.DataBase.Mapping
             builder.Property(c => c.MODIFIED);
             builder.Property(c => c.ISACTIVE);
             builder.Property(c => c.ORDERID);
-            builder.Property(c => c.CRORDERS);
             builder.Property(c => c.PRODUCTID);
             builder.Property(c => c.FISCALOPERID);
             builder.Property(c => c.TABLEVALUE);
