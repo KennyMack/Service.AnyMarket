@@ -42,7 +42,8 @@ namespace Hino.Service.AnyMarket.DataBase.Mapping
             builder.Property(c => c.ISPROPOSAL);
             builder.Property(c => c.FREIGHTPAIDBY);
             builder.Property(c => c.REDISPATCHPAIDBY);
-            builder.Property(c => c.FREIGHTVALUE);
+            builder.Property(c => c.FREIGHTVALUE)
+                .HasColumnType("NUMBER");
             builder.Property(c => c.CLIENTORDER);
             builder.Property(c => c.IDERP);
             builder.Property(c => c.ORIGINORDERID);
@@ -53,7 +54,8 @@ namespace Hino.Service.AnyMarket.DataBase.Mapping
             builder.Property(c => c.CONTACT);
             builder.Property(c => c.SECTOR);
             builder.Property(c => c.DIGITIZERID);
-            builder.Property(c => c.FINANCIALTAXES);
+            builder.Property(c => c.FINANCIALTAXES)
+                .HasColumnType("NUMBER");
             builder.Property(c => c.ONLYONDATE);
             builder.Property(c => c.ALLOWPARTIAL);
             builder.Property(c => c.REVISIONREASON);

@@ -22,7 +22,8 @@ namespace Hino.Service.AnyMarket.DataBase.Mapping
             builder.Property(c => c.ORDERID);
             builder.Property(c => c.PRODUCTID);
             builder.Property(c => c.FISCALOPERID);
-            builder.Property(c => c.TABLEVALUE);
+            builder.Property(c => c.TABLEVALUE)
+                .HasColumnType("NUMBER");
             builder.Property(c => c.VALUE);
             builder.Property(c => c.QUANTITY);
             builder.Property(c => c.QUANTITYREFERENCE);

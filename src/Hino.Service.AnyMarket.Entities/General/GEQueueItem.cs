@@ -19,8 +19,8 @@ namespace Hino.Service.AnyMarket.Entities.General
         public bool UPLOADED { get; set; }
         public string ENTRYNAME { get; set; }
         public string TYPE { get; set; }
-        public string NOTE { get; set; }
-        public string EXCEPTIONCODE { get; set; }
+        public string? NOTE { get; set; }
+        public string? EXCEPTIONCODE { get; set; }
 
     }
 }

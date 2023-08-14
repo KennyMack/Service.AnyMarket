@@ -8,8 +8,10 @@ namespace Hino.Service.AnyMarket.Utils
 {
     public static class Constants
     {
-        public const string VEOrders = "VEORDERS";
+        public const string VEAnyMarketOrders = "VEANYMARKETORDERS";
 
         public const string NotFound = "NotFound";
+
+        public const string New = "NEW";
     }
 }

@@ -25,7 +25,8 @@ namespace Hino.Service.AnyMarket.DataBase.Mapping
             builder.Property(c => c.CODPRVENDA);
             builder.Property(c => c.CODPRODUTO);
             builder.Property(c => c.CODREGIAO);
-            builder.Property(c => c.VALORUNITARIO);
+            builder.Property(c => c.VALORUNITARIO)
+                .HasColumnType("NUMBER");
         }
     }
 }

@@ -29,6 +29,17 @@ namespace Hino.Service.AnyMarket.Application.Core.External.AnyMarket
             };
         }
 
+        FeedOrders _FeedOrders;
+        public FeedOrders FeedOrders
+        {
+            get
+            {
+                _FeedOrders ??= new FeedOrders(this.HttpClient, ParamToken);
+
+                return _FeedOrders;
+            }
+        }
+
         Stocks _Stocks;
         public Stocks Stocks
         {

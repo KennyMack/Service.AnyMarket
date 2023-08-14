@@ -12,7 +12,6 @@ IHost host = Host.CreateDefaultBuilder(args)
 
         services.AddHostedService<Worker>();
         services.RegisterServices();
-
     })
     .Build();
 
